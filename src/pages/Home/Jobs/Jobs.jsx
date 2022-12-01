@@ -10,6 +10,7 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../UserContext/UserContext';
 import DataLoadingSpinner from '../../../component/Loader/DataLoadingSpinner';
+import { confirmAlert } from 'react-confirm-alert';
 
 function Jobs() {
     const [jobs, setJobs] = useState([]);
@@ -26,12 +27,27 @@ function Jobs() {
     }, [refetch])
 
     const handleDelete = (catId, jobId) => {
-        setLoading(true)
-        axios.delete(`https://tech-foring-assignment.vercel.app/job?category=${catId}&jobId=${jobId}`, {
-            headers: {
-                authorization: `Bearer ${localStorage.getItem('task-token')}`
-            }
-        }).then(res => { setLoading(false); setRefetch(!refetch) }).catch(err => { console.log(err); setLoading(false) })
+        confirmAlert({
+            message: 'Are you sure to remove this job ?',
+            buttons: [
+                {
+                    label: 'Yes',
+                    onClick: () => {
+                        setLoading(true)
+                        axios.delete(`https://tech-foring-assignment.vercel.app/job?category=${catId}&jobId=${jobId}`, {
+                            headers: {
+                                authorization: `Bearer ${localStorage.getItem('task-token')}`
+                            }
+                        }).then(res => { setLoading(false); setRefetch(!refetch) }).catch(err => { console.log(err); setLoading(false) })
+                    }
+                },
+                {
+                    label: 'No',
+                    onClick: () => { setLoading(false) }
+                }
+            ]
+        });
+
     }
     const handleEdit = (catId, job) => {
         const data = { catId, job }
@@ -44,6 +60,13 @@ function Jobs() {
     }
     if (loading) {
         return <DataLoadingSpinner />
+    }
+    if (jobs.length === 0) {
+        return <Box fullWidth sx={{ mb: 5 }}>
+            <Typography component="h1" variant="h5" sx={{ mb: 2 }}>
+                No Vaccancy Now !
+            </Typography>
+        </Box>
     }
     return (
         <Box fullWidth sx={{ mb: 5 }}>

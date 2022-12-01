@@ -11,6 +11,7 @@ import Container from '@mui/material/Container';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../UserContext/UserContext';
+import DataLoadingSpinner from '../../component/Loader/DataLoadingSpinner';
 
 export default function SignUp() {
     const [loading, setLoading] = React.useState(false)
@@ -50,6 +51,10 @@ export default function SignUp() {
             }
         }).catch(err => { console.log(err); setLoading(false) })
     };
+
+    if (loading) {
+        return <DataLoadingSpinner />
+    }
 
     return (
         <Container component="main" maxWidth="xs">

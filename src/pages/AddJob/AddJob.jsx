@@ -25,7 +25,11 @@ function AddJob() {
         }
         else {
             setLoading(true)
-            axios.post('https://tech-foring-assignment.vercel.app/add-job', job).then(res => {
+            axios.post('https://tech-foring-assignment.vercel.app/add-job', job, {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('task-token')}`
+                }
+            }).then(res => {
                 if (res.status === 200) {
                     setRefetch(!refetch)
                     setLoading(false)

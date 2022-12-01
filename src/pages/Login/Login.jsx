@@ -51,15 +51,14 @@ export default function Login() {
         }).then(data => {
             if (data.token) {
                 toast.success('Login successful !');
+                navigate('/home')
                 setLoading(false);
                 setUser(true);
                 localStorage.setItem('task-token', data.token);
-                navigate('/home')
             }
         }).catch(err => { console.log(err); setLoading(false) })
     };
     const handleLogout = () => {
-        console.log('clicked')
         setLoading(true)
         setUser(false);
         localStorage.removeItem('task-token');
