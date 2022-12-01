@@ -5,9 +5,6 @@ import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -17,7 +14,6 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../UserContext/UserContext';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
 
 export default function Header(props) {
    const { window } = props;
@@ -92,7 +88,7 @@ export default function Header(props) {
                      sx={{ flexGrow: 1, display: { xs: 'none', md: 'block' } }}
                   >
                      <img
-                        src='https://i.ibb.co/JsvBDwD/logo.png'
+                        src='https://techforing.com/static/tfimg/logo.png'
                         alt=''
                         style={{
                            width: '150px',

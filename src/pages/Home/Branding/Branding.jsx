@@ -23,11 +23,10 @@ const Branding = () => {
                   lineHeight: '1.2',
                }}
             >
-               Let’s Grow Your Brand <br /> To The Next Level
+               Let’s Grow Your Career <br /> To The Next Level
             </Typography>
             <Typography>
-               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus
-               commodo ipsum duis laoreet maecenas. Feugiat{' '}
+               With a team of talented and exciting individuals, our mission is to protect digital assets for corporations and individuals and provide a safer cyberspace for everyone.
             </Typography>
             <Button
                sx={{

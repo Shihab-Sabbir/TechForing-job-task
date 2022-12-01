@@ -1,5 +1,6 @@
 import { Box, Button, Container, Divider, Typography } from '@mui/material';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
    return (
@@ -24,7 +25,7 @@ const Footer = () => {
                      flex: 1,
                   }}
                >
-                  Creative Agency
+                  Tech Foring
                </Typography>
                <Box
                   sx={{
@@ -38,18 +39,18 @@ const Footer = () => {
                         color: 'rgba(255, 255, 255, 0.5)',
                      }}
                   >
-                     Creative Agency
+                     Career
                   </Typography>
                   <Button
                      sx={{
-                        bgcolor: 'primary.green',
+                        bgcolor: 'white',
                         '&:hover': {
-                           bgcolor: 'primary.green',
+                           bgcolor: 'primary',
                         },
                         ml: 2,
                      }}
                   >
-                     Get Started
+                     <Link to='/home'> Current Vaccancy</Link>
                   </Button>
                </Box>
             </Box>
