@@ -10,6 +10,7 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../UserContext/UserContext';
 import DataLoadingSpinner from '../../../component/Loader/DataLoadingSpinner';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 import { confirmAlert } from 'react-confirm-alert';
 
 function Jobs() {
@@ -96,8 +97,9 @@ function Jobs() {
                                             </Typography>
                                         </Box>
                                         <Box>
-                                            <p onClick={() => handleEdit(job._id, item)} >Edit</p>
-                                            <p onClick={() => handleDelete(job._id, item.id)}>Delete</p>
+                                            <button onClick={() => handleEdit(job._id, item)} >Edit</button>
+                                            <br></br>
+                                            <button onClick={() => handleDelete(job._id, item.id)}>Delete</button>
                                         </Box>
                                     </Box>
 
