@@ -27,7 +27,7 @@ function EditJob() {
         }
         else {
             setLoading(true)
-            axios.put(`http://localhost:5000/edit-job?category=${state.data.catId}&jobId=${state.data.job.id}`, job, {
+            axios.put(`https://tech-foring-assignment.vercel.app/edit-job?category=${state.data.catId}&jobId=${state.data.job.id}`, job, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('task-token')}`
                 }

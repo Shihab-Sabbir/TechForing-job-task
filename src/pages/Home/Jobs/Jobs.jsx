@@ -18,7 +18,7 @@ function Jobs() {
     const navigate = useNavigate();
     useEffect(() => {
         setLoading(true)
-        axios.get('http://localhost:5000/job', {
+        axios.get('https://tech-foring-assignment.vercel.app/job', {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('task-token')}`
             }
@@ -27,7 +27,7 @@ function Jobs() {
 
     const handleDelete = (catId, jobId) => {
         setLoading(true)
-        axios.delete(`http://localhost:5000/job?category=${catId}&jobId=${jobId}`, {
+        axios.delete(`https://tech-foring-assignment.vercel.app/job?category=${catId}&jobId=${jobId}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('task-token')}`
             }
@@ -53,7 +53,7 @@ function Jobs() {
             {
                 jobs?.map(job =>
                     <Box key={job._id}>
-                        <Accordion fullWidth sx={{mb:1}}>
+                        <Accordion fullWidth sx={{ mb: 1 }}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1a-content"

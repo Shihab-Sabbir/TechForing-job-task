@@ -11,7 +11,7 @@ export const router = createBrowserRouter([
     {
         path: '/', element: <Layout />, children: [
             { path: '/', element: <Login /> },
-            { path: '/add-job', element: <AddJob /> },
+            { path: '/add-job', element: <ProtectedRoute>  <AddJob /></ProtectedRoute> },
             { path: '/edit-job', element: <EditJob /> },
             { path: '/login', element: <Login /> },
             { path: '/signup', element: <SignUp /> },

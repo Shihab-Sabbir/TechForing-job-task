@@ -36,7 +36,7 @@ export default function SignUp() {
         }
         const userData = { name, email, password };
         setLoading(true)
-        fetch('http://localhost:5000/register', {
+        fetch('https://tech-foring-assignment.vercel.app/register', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"

@@ -31,7 +31,7 @@ export default function Login() {
             return;
         }
         setLoading(true)
-        fetch(`http://localhost:5000/jwt`, {
+        fetch(`https://tech-foring-assignment.vercel.app/jwt`, {
             headers: {
                 email: email,
                 password: password

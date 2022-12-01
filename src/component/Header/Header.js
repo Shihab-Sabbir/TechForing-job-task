@@ -114,6 +114,15 @@ export default function Header(props) {
                            bgcolor: 'primary',
                         }}
                      >
+                        <Link to='/add-job'>
+                           Add Job
+                        </Link>
+                     </Button>
+                     <Button
+                        sx={{
+                           bgcolor: 'primary',
+                        }}
+                     >
                         {!user && <Link to='/login'>
                            Login
                         </Link>}

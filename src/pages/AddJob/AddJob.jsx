@@ -25,7 +25,7 @@ function AddJob() {
         }
         else {
             setLoading(true)
-            axios.post('http://localhost:5000/add-job', job).then(res => {
+            axios.post('https://tech-foring-assignment.vercel.app/add-job', job).then(res => {
                 if (res.status === 200) {
                     setRefetch(!refetch)
                     setLoading(false)
